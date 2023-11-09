@@ -79,8 +79,8 @@ export default function Footer() {
 
     return (
         <div className="bg-white mt-10">
-           <div className="container mx-auto">
-            <div className="grid grid-cols-4 pt-10">
+           <div className="container mx-auto px-4 md:px-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-6 pt-5 md:pt-10">
                 <section>
                     <nav className="grid gap-y-4">
                     <h6 className="font-semibold text-md text-primary-brand-color">Getir'i indirin!</h6>
@@ -99,7 +99,7 @@ export default function Footer() {
                     <Menu title={menu.title} items={menu.items} />
                 ))}
             </div>
-            <div className="flex justify-between items-center border-t border-gray-100 mt-6 pt-6 mb-4">
+            <div className="flex flex-col gap-y-4 md:flex-row justify-between items-center border-t border-gray-100 mt-6 pt-6 mb-4">
                 <div className=" flex gap-10">
                     &copy; 2023 Getir
                     <a href="#" className="text-primary-brand-color">

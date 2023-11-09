@@ -37,19 +37,45 @@ export default function Campaigns() {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
+    arrows:true,
     nextArrow: <NextBtn />,
-    prevArrow: <PrevBtn />
+    prevArrow: <PrevBtn />,
+    responsive: [
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        }
+      ]
   };
 
     return (
-        <div className="container mx-auto py-8">
-            <h3 className="text-sm font-semibold mb-3">
+        <div className="container mx-auto md:py-8 overflow-x-hidden">
+            <h3 className="hidden md:block text-sm font-semibold mb-3">
                Kampanyalar
             </h3>
          <Slider className="-mx-2" {...settings}>
             {banners.length && banners.map((banner,index)=> (
                 <div key={index} className="px-2" >
-                    <img src={banner.image} alt="" className="rounded-lg" />
+                    <img src={banner.image} alt="" className="md:rounded-lg" />
                 </div>
             ))}
         </Slider>
